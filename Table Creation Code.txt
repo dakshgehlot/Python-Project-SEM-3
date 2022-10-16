@@ -7,3 +7,4 @@ Feels_Like_CELSIUS decimal(4,2) not null,
 Humidity int(2) not null,
 Time varchar(5) not null,
 City varchar(15) not null);
+

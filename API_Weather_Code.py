@@ -21,7 +21,7 @@ x=input("Do you want the database to be created automatically (Y/N)? ")
 while True:
     if x in ("Y","y"):
         while True:
-            datb = input("Please enter the preffered name of the database in which the table should exist: ") 
+            datb = input("Please enter the preferred name of the database in which the table should exist: ") 
             h = input("Are you sure that the above entered info is correct? (Y/N): ")            
             if h in ('Y','y'):
                 print('Good job, moving on...')
@@ -106,7 +106,6 @@ def coord(city):
     global result
     result = geocoder.opencage(city, key=lapi)
     print("")
-    #print(result)
     global lat
     global lon
     try:
@@ -148,13 +147,13 @@ def curr_weather():
                 temp= (cel(t['main']['temp']),far(t['main']['temp']))
                 feel = (cel(t['main']['feels_like']), far(t['main']['feels_like']))
                 print()
-                print("■ Today's average temperature:", temp[0], '℃', 'or', temp[1], '℉')
+                print("■ Today's average temperature:", temp[0], '℃ ', 'or', temp[1], '℉')
                 print('■ Feels Like:', feel[0], '℃', 'or', feel[1], '℉')
                 print('■ Humidity:', hum, '%')
                 l += 2
                 break
             elif resp.status_code == 400:
-                print("Server error \n trying again in", l, "seconds...")
+                print("Client error \n trying again in", l, "seconds...")
                 time.sleep(l)
                 l += 1
             if l == 7:
@@ -431,3 +430,6 @@ To end program, press 5''')
         else:
             print('Enter Valid Choice')            
     mcon.close()
+
+
+# lat, lon for Jodhpur: 26.2389, 73.0243
